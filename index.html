@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>測試中...</title>
+</head>
+<body>
+    <style>
+    body{
+        height: 2000px;;
+    }
+    .bg{
+        height: 100vh;
+    }
+    .box{
+        
+        position: absolute;
+        background-color: brown;
+        height: 100px;
+        width: 100px;
+        top: 50%;
+        left: 50%;
+        animation: move 3s infinite;
+        animation-play-state:paused;
+    }
+    @keyframes move{
+        0%{
+            transform:rotate();
+        }
+        100%{
+            transform: rotate(270deg);
+        }
+    }
+    </style>
+    <div class="bg">
+         <div class="box"></div>
+    </div>
+   
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+          $(document).ready(function () {
+
+                // header color change
+                $(window).scroll(function () {
+                    var scrollDistance = $(window).scrollTop();
+
+                    if (scrollDistance > 50) {
+                        $(".box").css("animation-play-state", "running");
+                    }
+                   
+                });
+                });
+    </script>
+</body>
+</html>
